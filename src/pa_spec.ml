@@ -224,6 +224,11 @@ EXTEND Gram
     | "it"; descr = STRING ->
         pending_example_group _loc descr
 
+    | "xit"; descr = STRING; "do"; seq = LIST1 expr; "done" ->
+        pending_example_group _loc descr
+    | "xit"; descr = STRING ->
+        pending_example_group _loc descr
+
     | res = SELF; "should"; OPT "be"; op = infixop0; exp = SELF ->
         infixop_expectation _loc op res exp positive
     | res = SELF; "should"; OPT "be"; op = ident; exp = SELF ->

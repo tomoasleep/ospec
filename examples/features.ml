@@ -27,5 +27,13 @@ describe "The number one" do
     (string_of_int 1) should match_regexp "^[0-9]+$"
   done;
 
-  it "should be cool"
+  it "should be cool";
+
+  xit "should ignore";
+
+  xit "should ignore also" do
+    let x = 1 * (-1) in
+    x should be < 0;
+    x should not be >= 0
+  done
 done
